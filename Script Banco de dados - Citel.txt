@@ -1,0 +1,110 @@
+CREATE DATABASE IF NOT EXISTS pedidos_venda
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_general_ci;
+
+USE pedidos_venda;
+
+CREATE TABLE IF NOT EXISTS clientes (
+    codigo  INT          NOT NULL AUTO_INCREMENT,
+    nome    VARCHAR(100) NOT NULL,
+    cidade  VARCHAR(80)  NOT NULL,
+    uf      CHAR(2)      NOT NULL,
+    CONSTRAINT pk_clientes PRIMARY KEY (codigo)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci;
+
+CREATE INDEX idx_clientes_nome ON clientes (nome);
+CREATE TABLE IF NOT EXISTS produtos (
+    codigo      INT            NOT NULL AUTO_INCREMENT,
+    descricao   VARCHAR(100)   NOT NULL,
+    preco_venda DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    CONSTRAINT pk_produtos PRIMARY KEY (codigo)
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci;
+
+CREATE INDEX idx_produtos_descricao ON produtos (descricao);
+CREATE TABLE IF NOT EXISTS pedidos (
+    numero_pedido  INT            NOT NULL AUTO_INCREMENT,
+    data_emissao   DATE           NOT NULL,
+    codigo_cliente INT            NOT NULL,
+    valor_total    DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    CONSTRAINT pk_pedidos          PRIMARY KEY (numero_pedido),
+    CONSTRAINT fk_pedidos_clientes FOREIGN KEY (codigo_cliente)
+        REFERENCES clientes (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci;
+
+CREATE INDEX idx_pedidos_cliente      ON pedidos (codigo_cliente);
+CREATE INDEX idx_pedidos_data_emissao ON pedidos (data_emissao);
+
+CREATE TABLE IF NOT EXISTS pedido_itens (
+    id             INT            NOT NULL AUTO_INCREMENT,
+    numero_pedido  INT            NOT NULL,
+    codigo_produto INT            NOT NULL,
+    quantidade     DECIMAL(10, 3) NOT NULL DEFAULT 0.000,
+    vr_unitario    DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    vr_total       DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    CONSTRAINT pk_pedido_itens   PRIMARY KEY (id),
+    CONSTRAINT fk_itens_pedidos  FOREIGN KEY (numero_pedido)
+        REFERENCES pedidos (numero_pedido)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+    CONSTRAINT fk_itens_produtos FOREIGN KEY (codigo_produto)
+        REFERENCES produtos (codigo)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT
+) ENGINE = InnoDB
+  DEFAULT CHARSET = utf8mb4
+  COLLATE = utf8mb4_general_ci;
+
+CREATE INDEX idx_itens_pedido  ON pedido_itens (numero_pedido);
+CREATE INDEX idx_itens_produto ON pedido_itens (codigo_produto);
+
+INSERT INTO clientes (nome, cidade, uf) VALUES
+    ('Acme Comercio Ltda',        'Sao Paulo',        'SP'),
+    ('Beta Industria S/A',        'Rio de Janeiro',   'RJ'),
+    ('Gama Servicos ME',          'Belo Horizonte',   'MG'),
+    ('Delta Transportes Ltda',    'Curitiba',         'PR'),
+    ('Epsilon Tecnologia SA',     'Porto Alegre',     'RS'),
+    ('Zeta Alimentos Ltda',       'Salvador',         'BA'),
+    ('Eta Construcoes ME',        'Fortaleza',        'CE'),
+    ('Theta Agropecuaria SA',     'Goiania',          'GO'),
+    ('Iota Farmacias Ltda',       'Manaus',           'AM'),
+    ('Kappa Autopecas ME',        'Recife',           'PE'),
+    ('Lambda Confeccoes SA',      'Belem',            'PA'),
+    ('Mu Eletronicos Ltda',       'Florianopolis',    'SC'),
+    ('Nu Moveis ME',              'Vitoria',          'ES'),
+    ('Xi Papelaria SA',           'Natal',            'RN'),
+    ('Omicron Ferragens Ltda',    'Campo Grande',     'MS'),
+    ('Pi Supermercados ME',       'Joao Pessoa',      'PB'),
+    ('Rho Combustiveis SA',       'Maceio',           'AL'),
+    ('Sigma Calcados Ltda',       'Aracaju',          'SE'),
+    ('Tau Grafica ME',            'Cuiaba',           'MT'),
+    ('Upsilon Distribuidora SA',  'Macapa',           'AP');
+
+INSERT INTO produtos (descricao, preco_venda) VALUES
+    ('Notebook Dell Inspiron 15',    3599.90),
+    ('Monitor LG 24 Full HD',         899.00),
+    ('Teclado Mecanico Redragon',      249.90),
+    ('Mouse Gamer Logitech G305',      199.00),
+    ('Headset HyperX Cloud II',        449.90),
+    ('Webcam Logitech C920',           399.00),
+    ('SSD Kingston 480GB',             229.90),
+    ('Memoria RAM 16GB DDR4',          279.00),
+    ('Fonte Corsair 650W',             389.90),
+    ('Gabinete NZXT H510',             499.00),
+    ('Impressora HP LaserJet',         899.90),
+    ('Nobreak APC 1200VA',             699.00),
+    ('Switch TP-Link 8 Portas',        149.90),
+    ('Cabo HDMI 2m Gold',               35.90),
+    ('Hub USB-C 7 em 1',               129.90),
+    ('Suporte Monitor Articulado',     189.00),
+    ('Cadeira Gamer ThunderX3',       1299.90),
+    ('Mesa para Escritorio 150cm',     599.00),
+    ('Ar-condicionado Split 9000BTU', 1899.90),
+    ('Estabilizador 1000VA',           199.00);
