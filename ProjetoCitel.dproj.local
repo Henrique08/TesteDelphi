@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2026/04/24 10:53:15.000.968,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2026/04/24 10:55:40.000.651,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uView.Pedido.dfm=C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2026/04/24 10:55:40.000.651,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uView.Pedido.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2026/04/24 10:55:48.000.910,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\ProjetoCitel.dproj=C:\Users\Henrique\Documents\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2026/04/24 11:03:25.000.364,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:03:32.000.820,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uModel.Cliente.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:04:13.000.142,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:04:37.000.852,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uModel.Produto.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:05:09.000.202,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:05:20.000.336,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uModel.Pedido.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:05:48.000.192,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:05:57.000.382,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uModel.ItemPedido.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:06:23.000.082,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:06:39.000.865,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uDao.Conexao.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:07:07.000.962,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:07:21.000.960,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uDao.Cliente.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:07:36.000.262,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:07:52.000.602,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uDao.Produto.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:08:19.000.542,=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+    <Transaction>2026/04/24 11:08:26.000.630,C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\uDao.Pedido.pas=C:\Users\Henrique\Documents\Embarcadero\Studio\Projeto\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
